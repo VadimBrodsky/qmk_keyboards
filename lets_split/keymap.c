@@ -72,7 +72,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |      |   -  |   =  |   _  |   +  |      |  |   |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |  {   |      |      |      |      |      |      |      |   <  |   >  |  \   |      |
+ * |  {   |      |      |      |      |      |      |      |   <  |   >  |  \   |  }   |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |             |      |      |      |      |      |
  * `-----------------------------------------------------------------------------------'
@@ -80,7 +80,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_LOWER] = KEYMAP(
   KC_TILD, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_CIRC, KC_AMPR,    KC_ASTR,    KC_LPRN, KC_RPRN, KC_BSPC,
   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_MINS, KC_EQL,     KC_UNDS,    KC_PLUS, KC_NO,   KC_PIPE,
-  KC_LCBR, KC_NO,   KC_NO,   KC_NO,   KC_NO ,  KC_NO,   KC_NO,   KC_NO,      KC_LABK,    KC_RABK, KC_BSLS, _______,
+  KC_LCBR, KC_NO,   KC_NO,   KC_NO,   KC_NO ,  KC_NO,   KC_NO,   KC_NO,      KC_LABK,    KC_RABK, KC_BSLS, KC_RCBR,
   _______, _______, _______, _______, _______, _______, _______, _______,    KC_NO,      KC_NO,   KC_NO,   KC_NO
 ),
 
