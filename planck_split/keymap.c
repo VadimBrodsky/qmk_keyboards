@@ -17,41 +17,43 @@ enum planck_keycodes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-/* Qwerty
+/* L0
  * ,-----------------------------------------------------------------------------------.
  * |   Q  |   W  |   E  |   R  |   T  |      |      |   Y  |   U  |   I  |   O  |   P  |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |   A  |   S  |   D  |   F  |   G  |      |      |   H  |   J  |   K  |   L  |   ;  |
+ * |   A  |   S  |D /Alt|F /CMD|   G  |      |      |   H  |J /CMD|K /Alt|   L  |   ;  |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |   Z  |   X  |   C  |   V  |   B  |      |      |   N  |   M  |   ,  |   .  |   /  |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |             |      |      |      |      |      |
+ * |      |      |      |SPACE |SHIFT |             | CTRL |  L1  |      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
-[_BASE] = LAYOUT_planck_grid(
-    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_NO,   KC_NO,   KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
-    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_NO,   KC_NO,   KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN,
-    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_NO,   KC_NO,   KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,
-    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO
+[_L0] = LAYOUT_planck_grid(
+    KC_Q,    KC_W,    KC_E,        KC_R,        KC_T,         _______, _______, KC_Y,         KC_U,         KC_I,        KC_O,    KC_P,
+    KC_A,    KC_S,    ALT_T(KC_D), GUI_T(KC_F), KC_G,         _______, _______, KC_H,         GUI_T(KC_J),  ALT_T(KC_K), KC_L,    KC_SCLN,
+    KC_Z,    KC_X,    KC_C,        KC_V,        KC_B,         _______, _______, KC_N,         KC_M,         KC_COMM,     KC_DOT,  KC_SLSH,
+    _______, _______, _______,     KC_SPC,      OSM(KC_LSFT), _______, _______, OSM(KC_RCTL), TO(L1),       _______,     _______, _______
 ),
 
-/* Lower
+/* L1
  * ,-----------------------------------------------------------------------------------.
- * |      |   !  |   @  |   #  |   $  |   %  |   ^  |   &  |   *  |   (  |   )  |  ~   |
+ * | ESC  |  !   |  @   |  #   |  $   |      |      |  %   |  ^   |  &   |   *  | BSPC |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |      |      |   -  |   +  |   <  |   >  |  |   |
+ * | TAB  |  "   |  `   |  =   |  ~   |      |      |  \   |  [   |  ]   |   |  | ENTR |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |  {   |      |      |      |      |      |      |   _  |   =  |      |   \  |  }   |
+ * |      |  '   |      |      |      |      |      |  (   |  {   |  }   |   )  |  L2  |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |             |      |PrvTab|      |      |NxtTab|
+ * |      |      |      |  L0  |SHIFT |             | CTRL |  L3  |      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
+
 [_L1] = LAYOUT_planck_grid(
-    KC_NO,   KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_CIRC, KC_AMPR,    KC_ASTR,     KC_LPRN, KC_RPRN, KC_TILD,
-    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_MINS,    KC_PLUS,     KC_LABK, KC_RABK, KC_PIPE,
-    KC_LCBR, KC_NO,   KC_NO,   KC_NO,   KC_NO ,  KC_NO,   KC_NO,   KC_UNDS,    KC_EQL,      KC_NO,   KC_BSLS, KC_RCBR,
-    _______, _______, _______, _______, _______, _______, _______, _______,    RCS(KC_TAB), KC_NO,   KC_NO,   LCTL(KC_TAB)
+    KC_ESC,   KC_EXLM,  KC_AT,   KC_HASH, KC_DLR,       _______, _______, KC_PERC,      KC_CIRC,  KC_AMPR, KC_ASTR, KC_BSPC,
+    KC_TAB,   KC_DQUO,  KC_GRV,  KC_EQL,  KC_TILD,      _______, _______, KC_NO,        KC_NO,    KC_NO,   KC_NO,   KC_ENT,
+    KC_NO,    KC_QUOT,  KC_NO,   KC_NO,   KC_NO ,       _______, _______, KC_NO,        KC_NO,    KC_NO,   KC_NO,   TO(L2),
+    _______, _______, _______,   TO(L0),  OSM(KC_LSFT), _______, _______, OSM(KC_RCTL), TO(L3),   _______, _______, _______
 ),
+
 
 /* Raise
  * ,-----------------------------------------------------------------------------------.
