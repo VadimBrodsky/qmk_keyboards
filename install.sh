@@ -8,4 +8,5 @@ ln -sfn "$qmk_keyboards_path/lets_split" "$qmk_path/keyboards/lets_split/keymaps
 ln -sfn "$qmk_keyboards_path/ok60" "$qmk_path/keyboards/ok60/keymaps/vadimbrodsky"
 ln -sfn "$qmk_keyboards_path/orthodox" "$qmk_path/keyboards/orthodox/keymaps/vadimbrodsky"
 ln -sfn "$qmk_keyboards_path/planck" "$qmk_path/keyboards/planck/keymaps/vadimbrodsky"
+ln -sfn "$qmk_keyboards_path/planck_split" "$qmk_path/keyboards/planck/keymaps/vadimbrodsky_2"
 

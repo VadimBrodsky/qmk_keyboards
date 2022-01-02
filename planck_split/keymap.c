@@ -1,17 +1,17 @@
 #include QMK_KEYBOARD_H
 
 enum planck_layers {
-  L1,
-  L2,
-  L3,
-  L4
+  _0,
+  _1,
+  _2,
+  _3
 };
 
 #define _______ KC_TRNS
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-/* L1
+/* 0
  * ,-----------------------------------------------------------------------------------.
  * |   Q  |   W  |   E  |   R  |   T  |      |      |   Y  |   U  |   I  |   O  |   P  |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -19,37 +19,37 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |   Z  |   X  |   C  |   V  |   B  |      |      |   N  |   M  |   ,  |   .  |   /  |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |SPACE |SHIFT |             | CTRL |  L2  |      |      |      |
+ * |      |      |      |SPACE |SHIFT |             | CTRL |  L1  |      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
-[L1] = LAYOUT_planck_grid(
+[0] = LAYOUT_planck_grid(
     KC_Q,    KC_W,    KC_E,        KC_R,        KC_T,         _______, _______, KC_Y,         KC_U,         KC_I,        KC_O,    KC_P,
     KC_A,    KC_S,    ALT_T(KC_D), GUI_T(KC_F), KC_G,         _______, _______, KC_H,         GUI_T(KC_J),  ALT_T(KC_K), KC_L,    KC_SCLN,
     KC_Z,    KC_X,    KC_C,        KC_V,        KC_B,         _______, _______, KC_N,         KC_M,         KC_COMM,     KC_DOT,  KC_SLSH,
-    _______, _______, _______,     KC_SPC,      OSM(KC_LSFT), _______, _______, OSM(KC_RCTL), TO(L2),       _______,     _______, _______
+    _______, _______, _______,     KC_SPC,      OSM(KC_LSFT), _______, _______, OSM(KC_RCTL), TO(1),       _______,     _______, _______
 ),
 
-/* L2
+/* 1
  * ,-----------------------------------------------------------------------------------.
  * | ESC  |  !   |  @   |  #   |  $   |      |      |  %   |  ^   |  &   |   *  | BSPC |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | TAB  |  "   |  `   |  =   |  ~   |      |      |  \   |  [   |  ]   |   |  | ENTR |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |  '   |      |      |      |      |      |  (   |  {   |  }   |   )  |  L3  |
+ * |      |  '   |      |      |      |      |      |  (   |  {   |  }   |   )  |  L2  |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |  L1  |SHIFT |             | CTRL |  L4  |      |      |      |
+ * |      |      |      |  L0  |SHIFT |             | CTRL |  L3  |      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
 
-[L2] = LAYOUT_planck_grid(
-    KC_ESC,   KC_EXLM,  KC_AT,   KC_HASH, KC_DLR,       _______, _______, KC_PERC,      KC_CIRC,  KC_AMPR, KC_ASTR, KC_BSPC,
-    KC_TAB,   KC_DQUO,  KC_GRV,  KC_EQL,  KC_TILD,      _______, _______, KC_NO,        KC_NO,    KC_NO,   KC_NO,   KC_ENT,
-    KC_NO,    KC_QUOT,  KC_NO,   KC_NO,   KC_NO ,       _______, _______, KC_NO,        KC_NO,    KC_NO,   KC_NO,   TO(L3),
-    _______, _______, _______,   TO(L1),  OSM(KC_LSFT), _______, _______, OSM(KC_RCTL), TO(L4),   _______, _______, _______
+[1] = LAYOUT_planck_grid(
+    KC_ESC,  KC_EXLM, KC_AT,   KC_HASH, KC_DLR,       _______, _______, KC_PERC,      KC_CIRC, KC_AMPR, KC_ASTR, KC_BSPC,
+    KC_TAB,  KC_DQUO, KC_GRV,  KC_EQL,  KC_TILD,      _______, _______, KC_BSLS,      KC_LBRC, KC_RBRC, KC_PIPE, KC_ENT,
+    KC_NO,   KC_QUOT, KC_NO,   KC_NO,   KC_NO,        _______, _______, KC_LPRN,      KC_LCBR, KC_RCBR, KC_RPRN, TO(2),
+    _______, _______, _______, TO(0),   OSM(KC_LSFT), _______, _______, OSM(KC_RCTL), TO(3),   _______, _______, _______
 ),
 
 
-/* L3
+/* 2
  * ,-----------------------------------------------------------------------------------.
  * | ESC  |      |      |      |      |      |      | BACK | PTAB | NTAB | FRWRD| BSPC |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -57,17 +57,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      | PLAY | NEXT |      |      |      |      |      |      |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |  L1  |SHIFT |             | CTRL |  L2  |      |      |      |
+ * |      |      |      |  L0  |SHIFT |             | CTRL |  L1  |      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
-[L3] = LAYOUT_planck_grid(
-    KC_ESC,  KC_NO,   KC_NO,   KC_NO,   KC_NO,        _______, _______, KC_WBAK       RCS(KC_TAB), LCTL(KC_TAB), KC_WFWD, KC_BSPC,
-    KC_TAB,  KC_VOLD, KC_VOLU, KC_NO,   KC_NO,        _______, _______, KC_LEFT,      KC_DOWN,     KC_UP,        KC_RGHT, KC_ENT,
-    KC_NO,   KC_MPLY, KC_MNXT, KC_NO,   KC_NO,        _______, _______, KC_NO,        KC_NO,       KC_NO,        KC_NO,   KC_NO,
-    _______, _______, _______, TO(L1),  OSM(KC_LSFT), _______, _______, OSM(KC_RCTL), TO(L2),      _______,      _______, _______
+[2] = LAYOUT_planck_grid(
+    KC_ESC,  KC_NO,   KC_NO,   KC_NO,  KC_NO,        _______, _______, KC_WBAK,      RCS(KC_TAB), LCTL(KC_TAB), KC_WFWD, KC_BSPC,
+    KC_TAB,  KC_VOLD, KC_VOLU, KC_NO,  KC_NO,        _______, _______, KC_LEFT,      KC_DOWN,     KC_UP,        KC_RGHT, KC_ENT,
+    KC_NO,   KC_MPLY, KC_MNXT, KC_NO,  KC_NO,        _______, _______, KC_NO,        KC_NO,       KC_NO,        KC_NO,   KC_NO,
+    _______, _______, _______, TO(0),  OSM(KC_LSFT), _______, _______, OSM(KC_RCTL), TO(1),       _______,      _______, _______
 ),
 
-/* L4
+/* 3
  * ,-----------------------------------------------------------------------------------.
  * | ESC  |      |      |      |  _   |      |      |   -  |   7  |   8  |  9   | BSPC |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -78,11 +78,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |      |      |      |  L1  |SHIFT |             | CTRL |  L2  |      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
-[L4] = LAYOUT_planck_grid(
-    KC_ESC, KC_NO,    KC_NO,   KC_NO,  KC_UNDS,      _______, _______, KC_MINS       KC_7,   KC_8,    KC_9,    KC_BSPC,
-    KC_TAB, KC_NO,    KC_NO,   KC_NO,  KC_PPLUS,     _______, _______, KC_EQL,       KC_4,   KC_5,    KC_6,    KC_ENT,
-    RESET,  KC_NO,    KC_NO,   KC_NO,  KC_DOT,       _______, _______, KC_0,         KC_1,   KC_2,    KC_3,    KC_RBRC,
-    _______, _______, _______, TO(L1), OSM(KC_LSFT), _______, _______, OSM(KC_RCTL), TO(L2), _______, _______, _______
+[3] = LAYOUT_planck_grid(
+    KC_ESC,  KC_NO,   KC_NO,   KC_NO,  KC_UNDS,      _______, _______, KC_MINS,      KC_7,  KC_8,    KC_9,    KC_BSPC,
+    KC_TAB,  KC_NO,   KC_NO,   KC_NO,  KC_PLUS,      _______, _______, KC_EQL,       KC_4,  KC_5,    KC_6,    KC_ENT,
+    RESET,   KC_NO,   KC_NO,   KC_NO,  KC_DOT,       _______, _______, KC_0,         KC_1,  KC_2,    KC_3,    TO(2),
+    _______, _______, _______, TO(0),  OSM(KC_LSFT), _______, _______, OSM(KC_RCTL), TO(3), _______, _______, _______
 ),
 };
 
