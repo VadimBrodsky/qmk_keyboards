@@ -1,6 +1,6 @@
 #!/bin/bash
 
-qmk_path="$HOME/code/qmk_firmware"
+qmk_path="$HOME/qmk_firmware"
 qmk_keyboards_path="$HOME/code/qmk_keyboards"
 
 ln -sfn "$qmk_keyboards_path/jj40" "$qmk_path/keyboards/kprepublic/jj40/keymaps/vadimbrodsky"
