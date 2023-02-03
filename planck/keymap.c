@@ -79,16 +79,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |  F11 |  F12 |      |      |      |      | SAT+ | SAT- |BRGTH+|BRGTH-|      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |MUSmod|Aud on|Audoff|AGnorm|AGswap|      |      |Debug | RGB  |RGBMOD| HUE+ | HUE- |
+ * |MUSmod|Aud on|Audoff|AGnorm|AGswap|      |      |      | RGB  |RGBMOD| HUE+ | HUE- |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |Brite |Voice-|Voice+|Mus on|Musoff|             |MIDIon|MIDIof|      |TermOn|TermOf|
+ * |Brite |Voice-|Voice+|Mus on|Musoff|             |MIDIon|MIDIof|      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
 [_ADJUST] = LAYOUT_planck_grid(
     RESET,   KC_F1,  KC_F2,  KC_F3,   KC_F4,   KC_F5, KC_F6, KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_DEL,
     KC_NO,   KC_F11, KC_F12, KC_NO,   KC_NO,   KC_NO, KC_NO, RGB_SAI, RGB_SAD, RGB_VAI, RGB_VAD, KC_NO,
-    MU_MOD,  AU_ON,  AU_OFF, AG_NORM, AG_SWAP, KC_NO, KC_NO, DEBUG,   RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD,
-    BACKLIT, MUV_DE, MUV_IN, MU_ON,   MU_OFF,  KC_NO, KC_NO, MI_ON,   MI_OFF,  KC_NO,   TERM_ON, TERM_OFF
+    MU_MOD,  AU_ON,  AU_OFF, AG_NORM, AG_SWAP, KC_NO, KC_NO, KC_NO,   RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD,
+    BACKLIT, MUV_DE, MUV_IN, MU_ON,   MU_OFF,  KC_NO, KC_NO, MI_ON,   MI_OFF,  KC_NO,   KC_NO,   KC_NO
 )
 
 };
